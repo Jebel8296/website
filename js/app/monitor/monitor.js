@@ -14,7 +14,7 @@ app.controller("MonitorServiceCtrl", function ($scope) {
         return item.service.substring(0, 5) == '1zm3c'
     }
 
-    $scope.eb = new EventBus('http://70b55bb7.ngrok.io/monitor');
+    $scope.eb = new EventBus('https://70b55bb7.ngrok.io/monitor');
     $scope.eb.onopen = function () {
         $scope.eb.registerHandler('monitor.service', function (err, message) {
             var res = message.body;
@@ -34,7 +34,7 @@ app.controller("MonitorMetricsCtrl", function ($scope) {
     if ($scope.eb != null) {
         $scope.eb.close();
     }
-    $scope.eb = new EventBus('http://70b55bb7.ngrok.io/monitor');
+    $scope.eb = new EventBus('https://70b55bb7.ngrok.io/monitor');
     $scope.eb.onopen = function () {
         $scope.eb.registerHandler('monitor.metrics', function (err, message) {
             var res = message.body;
@@ -52,7 +52,7 @@ app.controller("MonitorLogCtrl", function ($scope) {
     if ($scope.eb != null) {
         $scope.eb.close();
     }
-    $scope.eb = new EventBus('http://70b55bb7.ngrok.io/monitor');
+    $scope.eb = new EventBus('https://70b55bb7.ngrok.io/monitor');
     $scope.eb.onopen = function () {
         $scope.eb.registerHandler('monitor.logger', function (err, message) {
             var res = message.body;
