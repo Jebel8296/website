@@ -29,7 +29,7 @@ app.controller("DevicesServiceCtrl", function ($scope, $http) {
         data.pageNum = $scope.selPage;
         var promises = $http({
             method: 'GET',
-            url: "https://910d912e.ngrok.io/proddevice/query",
+            url: "https://927cca70.ngrok.io/proddevice/query",
             params: data
         });
         promises.then(function (result) {
@@ -87,7 +87,7 @@ app.controller("DevicesServiceCtrl", function ($scope, $http) {
         }
         $http({
             method: 'post',
-            url: "https://910d912e.ngrok.io/proddevice/add",
+            url: "https://927cca70.ngrok.io/proddevice/add",
             data: {"devicode": $scope.devicecode, "prodcode": $scope.prodcode}
         }).success(function (result) {
             $scope.warningmess = "新增成功.";
@@ -102,7 +102,7 @@ app.controller("DevicesServiceCtrl", function ($scope, $http) {
     $scope.toDeleteHandle = function (item) {
         $http({
             method: 'delete',
-            url: "https://910d912e.ngrok.io/proddevice/" + item.id
+            url: "https://927cca70.ngrok.io/proddevice/" + item.id
         }).success(function (result) {
             getAfterData();
         }).error(function (error) {
